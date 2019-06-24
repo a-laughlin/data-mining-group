@@ -1,0 +1,8 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {},
+  "dependencies": {
+    "puppeteer": "^1.17.0"
+  }
+}
