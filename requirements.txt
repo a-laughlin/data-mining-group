@@ -1,4 +1,6 @@
 numpy
 pandas
-ntlk
-spacy
+# ntlk
+# spacy
+fn
+funcy
