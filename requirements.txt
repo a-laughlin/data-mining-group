@@ -9,4 +9,5 @@ toolz
 efficient-apriori
 sklearn
 scipy
+seaborn
 -e git+https://github.com/a-laughlin/a-laughlin.git#egg=a_laughlin_py_utils&subdirectory=a_laughlin_py_utils
