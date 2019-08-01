@@ -2,12 +2,15 @@
 # https://pip.pypa.io/en/stable/reference/pip_install/#vcs-support for git installs
 numpy
 pandas
-spacy
-fn
-funcy
-toolz
 efficient-apriori
 sklearn
 scipy
 seaborn
+
+spacy
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz
+
+fn
+funcy
+toolz
 -e git+https://github.com/a-laughlin/a-laughlin.git#egg=a_laughlin_py_utils&subdirectory=a_laughlin_py_utils

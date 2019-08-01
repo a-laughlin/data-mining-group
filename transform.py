@@ -2,12 +2,10 @@ import json
 from utils import arr2d_from_dict_values,csv_from_arr2d,pipe
 import pandas as pd
 from a_laughlin_fp import write_json_file
+
+
 index_json_to_dict = lambda :json.load(open('./data/scrape_index.json'))['resolved']
-try:
-  import en_core_web_sm # for spacy
-except:
-  print('spacy language module needed')
-  print('run $ `python -m spacy download en_core_web_sm` from the command line')
+
 
 clean_index_dict=pipe(
   # omit non-content post indices, and guest authors
@@ -50,9 +48,11 @@ posts_csv_to_linguistic_features_json = pipe(
   lambda df:documents_to_linguistic_features_dict(df.Filename,df.Content.map(json.loads)),
   write_json_file('./data/linguistic_features.json')
 )
+
 def documents_to_linguistic_features_dict(keys,documents):
-  import spacy
-  nlp = spacy.load("en_core_web_sm")
+  import en_core_web_sm #spacy english model
+  nlp = en_core_web_sm.load()
+
   ret={}
   word_counts='word_counts'
   for key,content in zip(keys,documents):
