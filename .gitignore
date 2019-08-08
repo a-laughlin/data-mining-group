@@ -1,5 +1,7 @@
 build/
 __pycache__/
+.ipynb_checkpoints/
 *.log
 node_modules/
 data/posts/
+src/
