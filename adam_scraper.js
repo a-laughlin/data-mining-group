@@ -1,4 +1,9 @@
 // Code loosely based on https://antoinevastel.com/crawler/2018/09/20/parallel-crawler-puppeteer.html
+// Adds the ability to stop/restart and retry errors.
+// note to self. Starting with month indices complicates the crawler.
+// In the future.  Start at one post and work linearly through the index, shifting back days
+// on stop/error to account for new posts shifting the index.
+
 const puppeteer = require('puppeteer');
 const {readFile,writeFile,mkdir,readdir,stat} = require('fs').promises;
 const isFile = path=>stat(path).then(s=>s.isFile());
