@@ -1,9 +1,9 @@
+// Code loosely based on https://antoinevastel.com/crawler/2018/09/20/parallel-crawler-puppeteer.html
 const puppeteer = require('puppeteer');
 const {readFile,writeFile,mkdir,readdir,stat} = require('fs').promises;
 const isFile = path=>stat(path).then(s=>s.isFile());
 const isDirectory = path=>stat(path).then(s=>s.isDirectory());
 const ensureDir = path=>mkdir(path,{recursive:true});
-
 
 const crawl = async () => {
   const INDEX = './data/scrape_index.json'; // assumes shape like {resolved:{},to_visit:['/'],errors:[]}
@@ -69,8 +69,8 @@ const crawl = async () => {
   }
 
 
+  
   const ROOT_URL = 'https://ritholtz.com';
-  // based on https://antoinevastel.com/crawler/2018/09/20/parallel-crawler-puppeteer.html
   const startDate = new Date().getTime();
   const MAX_BROWSERS = 1;
   const MAX_PAGES_PER_BROWSER = 2;
